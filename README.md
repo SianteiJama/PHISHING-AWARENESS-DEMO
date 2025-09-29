@@ -1,0 +1,1 @@
+Phishing is a form of social-engineering where attackers impersonate trusted entities (banks, delivery services, employers, etc.) to trick victims into revealing credentials, clicking malicious links, or opening infected attachments. The examples below are defanged for safety and educational use.
