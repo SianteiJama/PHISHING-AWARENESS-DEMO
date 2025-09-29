@@ -1,0 +1,27 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page Heading -->
+  <h2>Phishing Email Viewer</h2>
+
+  <!-- Paste + Verify Section -->
+  <textarea id="emailInput" placeholder="Paste an email here..." rows="10" cols="50"></textarea>
+  <br>
+  <button onclick="checkEmail()" class="verify-btn">Verify Email</button>
+
+  <p id="result"></p>
+
+  <!-- Back button -->
+  <button onclick="goBack()" class="back-btn">⬅ Back to Awareness Page</button>
+
+  <script src="viewer-script.js"></script>
+</body>
+</html>
+ 

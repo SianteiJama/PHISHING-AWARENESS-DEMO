@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phishing Awareness — Learn to Spot Scams</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1> Phishing Awareness🔒</h1>
+    <p>Learn the red flags and test your skills with interactive examples.</p>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section class="card">
+      <h2>What is Phishing?</h2>
+      <p>
+        Phishing is a form of social-engineering where attackers impersonate trusted
+        entities (banks, delivery services, employers, etc.) to trick victims into
+        revealing credentials, clicking malicious links, or opening infected attachments.
+        The examples below are <strong>defanged</strong> for safety and educational use.
+      </p>
+      <p>
+        <a href="viewer.html" class="btn" target="_blank">Open Phishing Email Viewer (Demo)</a>
+      </p>
+    </section>
+
+    <!-- Examples -->
+    <section id="examples" class="card">
+      <h2>Phishing Examples (safe / defanged)</h2>
+
+      <!-- Example 1 -->
+      <article class="example">
+        <h3>Example 1 — Urgent Account Alert (Brand lookalike)</h3>
+        <p class="email">
+          <strong>From:</strong> support@paypa1.com<br>
+          <strong>Subject:</strong> URGENT: Suspicious activity — Verify your account<br><br>
+          Dear Customer,<br>
+          We detected suspicious activity on your account. Click <span class="defanged">hxxps://example[.]com/verify</span> to verify now or your account will be suspended.<br><br>
+          Regards,<br>PayPal Security Team
+        </p>
+<section id="paste-check">
+  <h2>Check Your Own Email</h2>
+  <p>Paste an email below and click "Verify".</p>
+  
+  <label>From:</label>
+  <input type="text" id="email-from" placeholder="e.g. support@paypa1.com">
+  
+  <label>Subject:</label>
+  <input type="text" id="email-subject" placeholder="e.g. Urgent: Verify your account">
+  
+  <label>Body:</label>
+  <textarea id="email-body" rows="6" placeholder="Paste email body here"></textarea>
+  
+  <button id="check-email">Verify Email</button>
+  <p id="check-result"></p>
+</section>
+
+        <button class="reveal-btn">Why this is phishing</button>
+        <div class="explain" aria-hidden="true">
+          <ul>
+            <li><strong>Sender mismatch / lookalike domain:</strong> <code>paypa1.com</code> (digit “1”) vs official <code>paypal.com</code>.</li>
+            <li><strong>Urgent/pressure language:</strong> "suspended" / "verify now" — attackers create panic to force action.</li>
+            <li><strong>Defanged link:</strong> the link is edited for safety; real emails often contain links that differ from visible text.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Example 2 -->
+      <article class="example">
+        <h3>Example 2 — Delivery / Attachment Lure</h3>
+        <p class="email">
+          <strong>From:</strong> notifications@dhl-delivery.com<br>
+          <strong>Subject:</strong> Parcel delivery failed — confirm details<br><br>
+          A delivery attempt failed. Please confirm address here: <span class="defanged">hxxp://short[.]url/track</span><br>
+          Attachment: <em>invoice.pdf</em><br><br>
+          If you do not respond within 24 hours, your parcel will be returned.
+        </p>
+
+        <button class="reveal-btn">Why this is phishing</button>
+        <div class="explain" aria-hidden="true">
+          <ul>
+            <li><strong>Shortened/obfuscated URL:</strong> Short links hide the real destination.</li>
+            <li><strong>Unexpected attachment:</strong> Invoices or .pdf/.exe attachments can contain malware.</li>
+            <li><strong>Pressure + plausible scenario:</strong> Attackers rely on fear of losing goods to trick victims.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Example 3 -->
+      <article class="example">
+        <h3>Example 3 — Prize / Too-Good-To-Be-True</h3>
+        <p class="email">
+          <strong>From:</strong> promo@offers.example<br>
+          <strong>Subject:</strong> Congratulations — You won an iPhone!<br><br>
+          Congratulations! You are selected. Click <span class="defanged">hxxps://claim[.]example</span> and enter your details to claim.
+        </p>
+
+        <button class="reveal-btn">Why this is phishing</button>
+        <div class="explain" aria-hidden="true">
+          <ul>
+            <li><strong>Unsolicited prize offers:</strong> Legit organizations do not typically notify winners by random email asking for personal data.</li>
+            <li><strong>Requests for personal/financial info:</strong> Never provide sensitive information in forms you reached via email link.</li>
+            <li><strong>Generic greeting:</strong> Lack of personalization (e.g., "Dear Customer") is often a red flag.</li>
+          </ul>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Quick Quiz -->
+    <section id="quiz" class="card">
+      <h2>Quick Quiz</h2>
+      <p>Is the following message phishing?</p>
+      <blockquote>
+        "Your payroll access will be suspended. Click <span class="defanged">hxxps://intranet[.]company/payroll</span> to reactivate."
+      </blockquote>
+      <div class="quiz-buttons">
+        <button onclick="submitAnswer(true)">Phishing</button>
+        <button onclick="submitAnswer(false)">Legit</button>
+      </div>
+      <p id="quiz-result" class="quiz-result" aria-live="polite"></p>
+    </section>
+
+    <!-- Tips -->
+    <section id="tips" class="card">
+      <h2>Top Tips to Avoid Phishing</h2>
+      <ul>
+        <li>Hover over links to inspect the real URL (don’t click if it looks suspicious).</li>
+        <li>Check sender email carefully for typos, extra characters, or wrong domains.</li>
+        <li>Do not open unexpected attachments—verify with the sender through known channels first.</li>
+        <li>Enable two-factor authentication (2FA) on important accounts.</li>
+        <li>If unsure, contact the company using contact details from their official website (not the email).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Created by Siantei Jama — Educational demo. All example links are defanged for safety (hxxp / [.] format).</p>
+  </footer>
+
+  <!-- Small inline script to toggle explanations and run the quiz -->
+  <script>
+    // Toggle explain sections
+    document.querySelectorAll('.reveal-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=> {
+        const explain = btn.nextElementSibling;
+        const visible = explain.style.display === 'block';
+        explain.style.display = visible ? 'none' : 'block';
+        btn.textContent = visible ? 'Why this is phishing' : 'Hide explanation';
+        explain.setAttribute('aria-hidden', visible ? 'true' : 'false');
+      });
+    });
+
+    // Quiz logic (for this example the correct answer is "phishing")
+    function submitAnswer(chosenPhishing) {
+      const result = document.getElementById('quiz-result');
+      const correct = true;
+      if (chosenPhishing === correct) {
+        result.textContent = '✅ Correct — this is a phishing attempt. Look for urgent language and suspicious URLs.';
+        result.style.color = 'green';
+      } else {
+        result.textContent = '❌ Not quite — this example is phishing. Be cautious with unexpected account notices.';
+        result.style.color = 'crimson';
+      }
+    }
+  </script>
+</body>
+</html>
+
